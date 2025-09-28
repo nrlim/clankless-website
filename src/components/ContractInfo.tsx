@@ -5,7 +5,7 @@ import { siteContent } from "@/lib/content";
 
 export default function ContractInfo() {
   return (
-    <section className="py-16 bg-graphite">
+    <section id="token" className="py-16 bg-graphite scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-3xl p-8 border border-soft-gray/20 shadow-soft-lg">
