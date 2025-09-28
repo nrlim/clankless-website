@@ -69,7 +69,7 @@ export default function Social() {
                   Get real-time updates, announcements, and engage with the community on X (formerly Twitter).
                 </p>
                 
-                <div className="flex items-center text-electric-cyan font-medium">
+                {/* <div className="flex items-center text-electric-cyan font-medium">
                   <span>@yourhandle</span>
                   <svg
                     width="16"
@@ -83,7 +83,7 @@ export default function Social() {
                     <path d="M7 17L17 7" />
                     <path d="M7 7h10v10" />
                   </svg>
-                </div>
+                </div> */}
               </div>
             </button>
 
@@ -129,7 +129,7 @@ export default function Social() {
                   Connect with the community, get support, and participate in discussions on our Telegram channel.
                 </p>
                 
-                <div className="flex items-center text-plasma-magenta font-medium">
+                {/* <div className="flex items-center text-plasma-magenta font-medium">
                   <span>t.me/yourchannel</span>
                   <svg
                     width="16"
@@ -143,7 +143,7 @@ export default function Social() {
                     <path d="M7 17L17 7" />
                     <path d="M7 7h10v10" />
                   </svg>
-                </div>
+                </div> */}
               </div>
             </button>
           </div>
