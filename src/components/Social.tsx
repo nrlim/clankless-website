@@ -1,8 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import { siteContent } from "@/lib/content";
+import Modal from "./Modal";
+import SocialPopup from "./SocialPopup";
 
 export default function Social() {
+  const [activePopup, setActivePopup] = useState<"twitter" | "telegram" | null>(null);
+
+  const openPopup = (platform: "twitter" | "telegram") => {
+    setActivePopup(platform);
+  };
+
+  const closePopup = () => {
+    setActivePopup(null);
+  };
   return (
     <section id="community" className="py-16 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,11 +28,9 @@ export default function Social() {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Twitter/X */}
-            <a
-              href={siteContent.social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-soft-gray/20 hover:border-electric-cyan/50 transition-all duration-300 hover:scale-105"
+            <button
+              onClick={() => openPopup("twitter")}
+              className="group relative overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-soft-gray/20 hover:border-electric-cyan/50 transition-all duration-300 hover:scale-105 w-full text-left"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-electric-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
@@ -75,14 +85,12 @@ export default function Social() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </button>
 
             {/* Telegram */}
-            <a
-              href={siteContent.social.telegram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-soft-gray/20 hover:border-plasma-magenta/50 transition-all duration-300 hover:scale-105"
+            <button
+              onClick={() => openPopup("telegram")}
+              className="group relative overflow-hidden bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-soft-gray/20 hover:border-plasma-magenta/50 transition-all duration-300 hover:scale-105 w-full text-left"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-plasma-magenta/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
@@ -137,38 +145,19 @@ export default function Social() {
                   </svg>
                 </div>
               </div>
-            </a>
-          </div>
-
-          {/* Newsletter Signup (Optional) */}
-          <div className="mt-12 text-center">
-            <div className="max-w-md mx-auto bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-soft-gray/20">
-              <h3 className="text-lg font-semibold text-white mb-3">Stay Updated</h3>
-              <p className="text-sm text-soft-gray mb-4">
-                Get notified about important updates and announcements.
-              </p>
-              
-              <form className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 bg-gray-900/50 border border-soft-gray/20 rounded-xl text-white placeholder-soft-gray focus:outline-none focus:ring-2 focus:ring-electric-cyan focus:border-transparent"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-2 bg-electric-cyan text-graphite font-medium rounded-xl hover:bg-electric-cyan/90 transition-colors duration-200"
-                >
-                  Subscribe
-                </button>
-              </form>
-              
-              <p className="text-xs text-soft-gray mt-2">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </div>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <Modal isOpen={activePopup === "twitter"} onClose={closePopup}>
+        <SocialPopup platform="twitter" />
+      </Modal>
+
+      <Modal isOpen={activePopup === "telegram"} onClose={closePopup}>
+        <SocialPopup platform="telegram" />
+      </Modal>
     </section>
   );
 }

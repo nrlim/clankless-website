@@ -6,22 +6,22 @@ export const siteContent = {
     chain: "Plasma (EVM)",
     title: "Clankess (CLESS) — Plasma Token",
     description: "Zero noise, maximum throughput. Clankess powers fast, low-friction trading on Plasma.",
-    url: "https://clankess.com", // Update with actual domain
+    url: "", // Update with actual domain
   },
 
   // Contract Information
   contract: {
-    address: "0xYOUR_CONTRACT_ADDRESS", // UPDATE THIS
+    address: "0xeb1c0FeC0312FC1ef382D002dB2d2709141caff7", // UPDATE THIS
     decimals: 18,
     chainSlug: "plasma", // UPDATE THIS for Dexscreener
-    pairAddress: "0xYOUR_PAIR_ADDRESS", // UPDATE THIS
+    pairAddress: "0xeb1c0FeC0312FC1ef382D002dB2d2709141caff7", // UPDATE THIS
   },
 
   // Social Links
   social: {
-    twitter: "https://x.com/yourhandle", // UPDATE THIS
-    telegram: "https://t.me/yourchannel", // UPDATE THIS
-    dexLink: "https://dexscreener.com/CHAIN_SLUG/PAIR_ADDRESS", // UPDATE THIS
+    twitter: "https://x.com/", // UPDATE THIS
+    telegram: "https://t.me/", // UPDATE THIS
+    dexLink: "https://dexscreener.com/plasma/0xeb1c0fec0312fc1ef382d002db2d2709141caff7", // UPDATE THIS
   },
 
   // Navigation
@@ -156,6 +156,36 @@ export const siteContent = {
       answer: "Use the contract address provided on this page to add CLESS as a custom token in your wallet.",
     },
   ],
+
+  // Social Popups Content
+  socialPopups: {
+    twitter: {
+      title: "Follow us on X",
+      description: "Stay connected with the Clankess community on X (formerly Twitter) for real-time updates, announcements, and engaging discussions.",
+      benefits: [
+        "Get instant notifications about important updates",
+        "Participate in community discussions and polls",
+        "Access exclusive content and behind-the-scenes insights",
+        "Connect with other CLESS holders and enthusiasts",
+        "Be the first to know about partnerships and developments"
+      ],
+      ctaText: "Follow @Clankess",
+      secondaryText: "Join thousands of community members already following us"
+    },
+    telegram: {
+      title: "Join our Telegram",
+      description: "Connect with the most active part of our community on Telegram. Get support, share ideas, and stay updated with real-time discussions.",
+      benefits: [
+        "24/7 community support and assistance",
+        "Direct communication with team members",
+        "Real-time price discussions and market analysis",
+        "Exclusive announcements and alpha information",
+        "Network with fellow traders and long-term holders"
+      ],
+      ctaText: "Join Telegram Group",
+      secondaryText: "Active community with 1000+ members online daily"
+    }
+  },
 
   // Footer
   footer: {

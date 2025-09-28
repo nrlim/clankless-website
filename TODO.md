@@ -1,105 +1,42 @@
-# Clankess Landing Page - Development TODO
+# Social Media Popups Implementation
 
-## Phase 1: Project Setup & Configuration
-- [x] Initialize Next.js project with TypeScript
-- [x] Configure Tailwind CSS with custom brand colors
-- [x] Set up project structure and basic configuration
-- [x] Create favicon and basic metadata setup
+## Progress Tracker
 
-## Phase 2: Core Components & Layout
-- [x] Create reusable components (CopyToClipboard, Button, etc.)
-- [x] Build responsive navbar with smooth scroll navigation
-- [x] Implement hero section with 3D-style graphics and animations
-- [x] Create contract info card with copy functionality
+### ✅ Planning Phase
+- [x] Analyze current Social.tsx component
+- [x] Review project structure and styling
+- [x] Create implementation plan
+- [x] Get user approval
 
-## Phase 3: Content Sections
-- [x] Build social & community section
-- [x] Implement Dexscreener chart embed
-- [x] Create About section with feature cards
-- [x] Build How to Buy step-by-step guide
-- [x] Add token details grid
-- [x] Implement FAQ accordion
+### ✅ Implementation Phase
+- [x] Create reusable Modal component
+- [x] Create SocialPopup component with Twitter/Telegram content
+- [x] Update content.ts with popup-specific data
+- [x] Modify Social.tsx to use popups instead of direct links
+- [x] TypeScript compilation check passed
+- [x] All components implemented successfully
 
-## Phase 4: Advanced Features
-- [x] Add smooth scroll and active nav highlighting
-- [x] Implement toast notifications for copy actions
-- [x] Add hover animations and micro-interactions
-- [x] Create content management system (content.ts)
+### ✅ Components Created
+1. [x] `src/components/Modal.tsx` - Reusable modal wrapper
+2. [x] `src/components/SocialPopup.tsx` - Social media popup content
 
-## Phase 5: SEO & Performance
-- [x] Add comprehensive metadata and Open Graph tags
-- [x] Implement JSON-LD schema
-- [x] Optimize for Core Web Vitals
-- [x] Add robots.txt and sitemap
-- [x] Create README with update instructions
+### ✅ Components Modified
+1. [x] `src/components/Social.tsx` - Replace direct links with popup triggers
+2. [x] `src/lib/content.ts` - Add popup content data
 
-## ✅ COMPLETED FEATURES
+### ✅ Features Implemented
+- [x] Smooth fade in/out animations (using Tailwind animate-fade-in and animate-slide-up)
+- [x] Click outside to close (backdrop click handler)
+- [x] ESC key to close (keyboard event listener)
+- [x] Mobile-responsive design (responsive modal sizing and layout)
+- [x] Platform-specific branding (Twitter electric-cyan, Telegram plasma-magenta)
+- [x] Clear call-to-action buttons (platform-specific styling and external links)
 
-### 🎨 Design & UI
-- [x] Dark mode design with brand colors (Graphite, Electric Cyan, Plasma Magenta)
-- [x] Responsive mobile-first layout
-- [x] Premium animations and micro-interactions
-- [x] Smooth scroll navigation
-- [x] Hover effects and transitions
-
-### 🧩 Components Built
-- [x] Navbar with active section highlighting
-- [x] Hero section with animated 3D-style graphics
-- [x] Contract info card with copy-to-clipboard
-- [x] Social media integration (X/Twitter, Telegram)
-- [x] Interactive Dexscreener chart embed
-- [x] About section with feature cards
-- [x] Step-by-step How to Buy guide
-- [x] FAQ accordion with search
-- [x] Comprehensive footer
-- [x] Reusable Button and CopyToClipboard components
-
-### 📱 Features
-- [x] Copy-to-clipboard functionality with toast notifications
-- [x] Smooth scroll to sections
-- [x] Mobile-responsive design
-- [x] Accessibility features (ARIA labels, keyboard navigation)
-- [x] Loading states and animations
-- [x] Interactive chart configuration
-
-### 🔧 Technical
-- [x] Next.js 14 with App Router
-- [x] TypeScript throughout
-- [x] Tailwind CSS with custom configuration
-- [x] Content management system (content.ts)
-- [x] SEO optimization with metadata
-- [x] Open Graph and Twitter Cards
-- [x] JSON-LD structured data
-- [x] Performance optimizations
-
-### 📄 Documentation
-- [x] Comprehensive README with setup instructions
-- [x] Content management guide
-- [x] Deployment instructions
-- [x] Troubleshooting section
-
-## 🚀 READY FOR DEPLOYMENT
-
-The Clankess landing page is now complete and ready for deployment! 
-
-### Next Steps:
-1. Update content in `src/lib/content.ts` with actual token information
-2. Add real contract address, social links, and pair address
-3. Test the site locally with `npm run dev`
-4. Deploy to Vercel or your preferred hosting platform
-5. Update domain in content.ts after deployment
-
-### Key Files to Update Before Going Live:
-- `src/lib/content.ts` - All token and social information
-- `public/favicon.svg` - Custom favicon (if needed)
-- `public/sitemap.xml` - Update domain
-- `public/robots.txt` - Update domain
-
-The site includes everything specified in the requirements:
-✅ Modern, responsive design
-✅ All required sections (Hero, About, How to Buy, Chart, FAQ, etc.)
-✅ Interactive features and animations
-✅ SEO optimization
-✅ Performance optimization
-✅ Content management system
-✅ Comprehensive documentation
+### 🎉 Implementation Complete!
+All social media popups have been successfully implemented with the following features:
+- Modal component with backdrop and close functionality
+- Platform-specific popup content for Twitter and Telegram
+- Smooth animations and transitions
+- Mobile-responsive design
+- Accessibility features (ESC key, focus management)
+- Integration with existing design system and color scheme

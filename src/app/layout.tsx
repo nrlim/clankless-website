@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(siteContent.site.url),
+  metadataBase: siteContent.site.url ? new URL(siteContent.site.url) : new URL('https://localhost:3000'),
   alternates: {
     canonical: "/",
   },
@@ -99,64 +99,66 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#121416" />
         
         {/* JSON-LD Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": `${siteContent.site.url}#organization`,
-                  name: siteContent.site.name,
-                  url: siteContent.site.url,
-                  logo: `${siteContent.site.url}/logo.png`,
-                  sameAs: [
-                    siteContent.social.twitter,
-                    siteContent.social.telegram,
-                  ],
-                  additionalProperty: [
-                    {
-                      "@type": "PropertyValue",
-                      name: "Ticker",
-                      value: siteContent.site.ticker,
-                    },
-                    {
-                      "@type": "PropertyValue",
-                      name: "Blockchain",
-                      value: siteContent.site.chain,
-                    },
-                    {
-                      "@type": "PropertyValue",
-                      name: "Contract Address",
-                      value: siteContent.contract.address,
-                    },
-                  ],
-                },
-                {
-                  "@type": "WebSite",
-                  "@id": `${siteContent.site.url}#website`,
-                  url: siteContent.site.url,
-                  name: siteContent.site.title,
-                  description: siteContent.site.description,
-                  publisher: {
+        {siteContent.site.url && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@graph": [
+                  {
+                    "@type": "Organization",
                     "@id": `${siteContent.site.url}#organization`,
-                  },
-                  potentialAction: [
-                    {
-                      "@type": "SearchAction",
-                      target: {
-                        "@type": "EntryPoint",
-                        urlTemplate: `${siteContent.site.url}?q={search_term_string}`,
+                    name: siteContent.site.name,
+                    url: siteContent.site.url,
+                    logo: `${siteContent.site.url}/logo.png`,
+                    sameAs: [
+                      siteContent.social.twitter,
+                      siteContent.social.telegram,
+                    ],
+                    additionalProperty: [
+                      {
+                        "@type": "PropertyValue",
+                        name: "Ticker",
+                        value: siteContent.site.ticker,
                       },
-                      "query-input": "required name=search_term_string",
+                      {
+                        "@type": "PropertyValue",
+                        name: "Blockchain",
+                        value: siteContent.site.chain,
+                      },
+                      {
+                        "@type": "PropertyValue",
+                        name: "Contract Address",
+                        value: siteContent.contract.address,
+                      },
+                    ],
+                  },
+                  {
+                    "@type": "WebSite",
+                    "@id": `${siteContent.site.url}#website`,
+                    url: siteContent.site.url,
+                    name: siteContent.site.title,
+                    description: siteContent.site.description,
+                    publisher: {
+                      "@id": `${siteContent.site.url}#organization`,
                     },
-                  ],
-                },
-              ],
-            }),
-          }}
-        />
+                    potentialAction: [
+                      {
+                        "@type": "SearchAction",
+                        target: {
+                          "@type": "EntryPoint",
+                          urlTemplate: `${siteContent.site.url}?q={search_term_string}`,
+                        },
+                        "query-input": "required name=search_term_string",
+                      },
+                    ],
+                  },
+                ],
+              }),
+            }}
+          />
+        )}
       </head>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-graphite text-white`}

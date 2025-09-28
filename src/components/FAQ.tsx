@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import { siteContent } from "@/lib/content";
+import Modal from "./Modal";
+import SocialPopup from "./SocialPopup";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [activePopup, setActivePopup] = useState<"twitter" | "telegram" | null>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -81,10 +84,9 @@ export default function FAQ() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={siteContent.social.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => setActivePopup("telegram")}
                 className="inline-flex items-center justify-center px-6 py-3 bg-plasma-magenta/20 hover:bg-plasma-magenta/30 border border-plasma-magenta/30 rounded-xl text-plasma-magenta font-medium transition-all duration-200 group"
               >
                 <svg
@@ -96,7 +98,7 @@ export default function FAQ() {
                 >
                   <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                 </svg>
-                Join Telegram
+                Telegram Launching Soon
                 <svg
                   width="16"
                   height="16"
@@ -110,12 +112,11 @@ export default function FAQ() {
                   <polyline points="15,3 21,3 21,9" />
                   <line x1="10" y1="14" x2="21" y2="3" />
                 </svg>
-              </a>
+              </button>
               
-              <a
-                href={siteContent.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => setActivePopup("twitter")}
                 className="inline-flex items-center justify-center px-6 py-3 bg-electric-cyan/20 hover:bg-electric-cyan/30 border border-electric-cyan/30 rounded-xl text-electric-cyan font-medium transition-all duration-200 group"
               >
                 <svg
@@ -127,7 +128,7 @@ export default function FAQ() {
                 >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
-                Follow on X
+                X Launching Soon
                 <svg
                   width="16"
                   height="16"
@@ -141,7 +142,7 @@ export default function FAQ() {
                   <polyline points="15,3 21,3 21,9" />
                   <line x1="10" y1="14" x2="21" y2="3" />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -174,6 +175,13 @@ export default function FAQ() {
           </p>
         </div>
       </div>
+      {/* Social Popups */}
+      <Modal isOpen={activePopup === "twitter"} onClose={() => setActivePopup(null)}>
+        <SocialPopup platform="twitter" />
+      </Modal>
+      <Modal isOpen={activePopup === "telegram"} onClose={() => setActivePopup(null)}>
+        <SocialPopup platform="telegram" />
+      </Modal>
     </section>
   );
 }
