@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clankess.com/sitemap.xml
