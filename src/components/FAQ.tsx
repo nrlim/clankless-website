@@ -146,34 +146,6 @@ export default function FAQ() {
             </div>
           </div>
         </div>
-
-        {/* Search FAQ */}
-        <div className="mt-12 max-w-2xl mx-auto">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search FAQ..."
-              className="w-full px-6 py-4 bg-gray-800/50 border border-soft-gray/20 rounded-2xl text-white placeholder-soft-gray focus:outline-none focus:ring-2 focus:ring-electric-cyan focus:border-transparent pl-12"
-            />
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="text-soft-gray"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="M21 21l-4.35-4.35" />
-              </svg>
-            </div>
-          </div>
-          <p className="text-center text-sm text-soft-gray mt-3">
-            Type keywords to quickly find answers to your questions
-          </p>
-        </div>
       </div>
       {/* Social Popups */}
       <Modal isOpen={activePopup === "twitter"} onClose={() => setActivePopup(null)}>

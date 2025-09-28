@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { siteContent } from "@/lib/content";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,24 +28,67 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6">{siteContent.about.title}</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">About Clankess</h2>
           <div className="max-w-4xl mx-auto space-y-6">
-            {siteContent.about.description.map((paragraph, index) => (
-              <p
-                key={index}
-                className={`text-lg text-soft-gray leading-relaxed transition-all duration-700 delay-${index * 200} ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-              >
-                {paragraph}
-              </p>
-            ))}
+            <p
+              className={`text-lg text-soft-gray leading-relaxed transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              Clankess is a meme coin created from the merge of Clanker and Plasma communities. Our goal is to unite holders, build trust, and have fun together. Clankess is powered by the community, open to everyone, and focused on positive vibes.
+            </p>
+            <p
+              className={`text-lg text-soft-gray leading-relaxed transition-all duration-700 delay-200 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              We believe in transparency, inclusivity, and growing together. Whether you were part of Clanker, Plasma, or are new to the space, Clankess welcomes you to join our journey and help shape the future of our meme coin.
+            </p>
           </div>
         </div>
 
         {/* Feature Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {siteContent.about.features.map((feature, index) => (
+          {/*
+            {
+              icon: "🤝",
+              title: "Merged Community",
+              description:
+                "Clankess unites Clanker and Plasma holders into one big meme family. If you were part of either, you’re home here.",
+            },
+            {
+              icon: "🪙",
+              title: "Just a Meme Coin",
+              description:
+                "No utility, no roadmap, no promises. Clankess is for fun, memes, and good vibes only.",
+            },
+            {
+              icon: "🎉",
+              title: "Community-Driven",
+              description:
+                "Everything is decided by the community. There’s no team, no leaders—just meme lovers.",
+            },
+          */}
+          { [
+            {
+              icon: "🤝",
+              title: "Merged Community",
+              description:
+                "Clankess brings together Clanker and Plasma holders into one united, trusted meme coin family.",
+            },
+            {
+              icon: "🪙",
+              title: "Meme Coin Spirit",
+              description:
+                "Fun, memes, and community vibes are at the heart of Clankess. We celebrate creativity and togetherness.",
+            },
+            {
+              icon: "🎉",
+              title: "Community-Driven",
+              description:
+                "Decisions are made by the community. Everyone’s voice matters in Clankess.",
+            },
+          ].map((feature, index) => (
             <div
               key={feature.title}
               className={`group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-soft-gray/20 hover:border-electric-cyan/50 transition-all duration-500 hover:scale-105 ${
@@ -83,32 +125,32 @@ export default function About() {
         <div className="bg-gradient-to-r from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-3xl p-8 border border-soft-gray/20">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-2">Why Choose Clankess?</h3>
-            <p className="text-soft-gray">Built for the future of decentralized finance</p>
+            <p className="text-soft-gray">For the memes, for the fun, for the community.</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-electric-cyan mb-2">⚡</div>
-              <div className="text-2xl font-bold text-white mb-1">Instant</div>
-              <div className="text-sm text-soft-gray">Transaction Speed</div>
+              <div className="text-3xl font-bold text-electric-cyan mb-2">😂</div>
+              <div className="text-2xl font-bold text-white mb-1">Meme Power</div>
+              <div className="text-sm text-soft-gray">All about jokes and laughter</div>
             </div>
             
             <div className="text-center">
-              <div className="text-3xl font-bold text-plasma-magenta mb-2">🔒</div>
-              <div className="text-2xl font-bold text-white mb-1">Secure</div>
-              <div className="text-sm text-soft-gray">Smart Contracts</div>
+              <div className="text-3xl font-bold text-plasma-magenta mb-2">🌐</div>
+              <div className="text-2xl font-bold text-white mb-1">Merged</div>
+              <div className="text-sm text-soft-gray">Clanker + Plasma</div>
             </div>
             
             <div className="text-center">
-              <div className="text-3xl font-bold text-electric-cyan mb-2">🌐</div>
-              <div className="text-2xl font-bold text-white mb-1">Global</div>
-              <div className="text-sm text-soft-gray">Community Driven</div>
+              <div className="text-3xl font-bold text-electric-cyan mb-2">👥</div>
+              <div className="text-2xl font-bold text-white mb-1">Community</div>
+              <div className="text-sm text-soft-gray">Everyone’s welcome</div>
             </div>
             
             <div className="text-center">
-              <div className="text-3xl font-bold text-plasma-magenta mb-2">💎</div>
-              <div className="text-2xl font-bold text-white mb-1">Premium</div>
-              <div className="text-sm text-soft-gray">User Experience</div>
+              <div className="text-3xl font-bold text-plasma-magenta mb-2">🚫</div>
+              <div className="text-2xl font-bold text-white mb-1">No Utility</div>
+              <div className="text-sm text-soft-gray">Just for fun</div>
             </div>
           </div>
         </div>
@@ -118,11 +160,8 @@ export default function About() {
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-electric-cyan/10 to-plasma-magenta/10 backdrop-blur-sm rounded-3xl p-8 border border-electric-cyan/20">
             <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
             <p className="text-lg text-soft-gray leading-relaxed">
-              To democratize access to high-performance decentralized finance through innovative technology, 
-              transparent governance, and a community-first approach. Clankess is more than a token—it's 
-              the foundation for the next generation of DeFi applications.
+              To unite and empower the Clankess community, build trust, and keep the meme spirit alive. Join us to create, share, and grow together!
             </p>
-            
             <div className="mt-6 flex items-center justify-center space-x-4">
               <div className="w-2 h-2 bg-electric-cyan rounded-full animate-pulse"></div>
               <div className="w-2 h-2 bg-plasma-magenta rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>

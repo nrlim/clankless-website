@@ -41,7 +41,7 @@ export default function Footer() {
             </Link>
             
             <p className="text-soft-gray mb-6 max-w-md leading-relaxed">
-              {siteContent.site.description}
+              Clankess is a meme coin created from the merge of Clanker and Plasma. Our mission is to unite holders, build trust, and grow together as a community. Clankess is powered by its members and welcomes everyone to join the fun.
             </p>
             
             <div className="flex items-center space-x-4">
@@ -195,7 +195,7 @@ export default function Footer() {
         {/* Disclaimer */}
         <div className="mt-6 p-4 bg-plasma-magenta/5 border border-plasma-magenta/20 rounded-xl">
           <p className="text-xs text-soft-gray text-center leading-relaxed">
-            {siteContent.footer.disclaimer}
+            Clankess is a meme coin for community and entertainment purposes only. There is no financial value or guarantee. Join us for the vibes and help shape our future together!
           </p>
         </div>
       </div>

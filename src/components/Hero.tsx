@@ -32,15 +32,15 @@ export default function Hero() {
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div className="space-y-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                <span className="block">{siteContent.site.name}</span>
-                <span className="block text-electric-cyan">({siteContent.site.ticker})</span>
+                <span className="block">Clankess</span>
+                <span className="block text-electric-cyan">(CLESS)</span>
                 <span className="block text-2xl sm:text-3xl lg:text-4xl text-soft-gray font-normal mt-2">
-                  mint in silence, move at plasma speed.
+                  Meme coin merging Clanker and Plasma—community-powered, fun, and open to everyone.
                 </span>
               </h1>
               
               <p className="text-lg sm:text-xl text-soft-gray max-w-2xl leading-relaxed">
-                {siteContent.hero.subtitle}
+                Born from the merge of Clanker and Plasma, Clankess is a community-driven meme coin focused on bringing people together for good vibes and shared growth. Join for the memes, stay for the community!
               </p>
             </div>
 
@@ -110,8 +110,8 @@ export default function Hero() {
                 {/* Inner Circle - Coin */}
                 <div className="absolute inset-12 rounded-full bg-gradient-to-br from-electric-cyan/20 to-plasma-magenta/20 backdrop-blur-sm border border-white/20 flex items-center justify-center animate-float">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-white mb-2">CLESS</div>
-                    <div className="text-sm text-soft-gray">Plasma Network</div>
+                    <div className="text-4xl font-bold text-white mb-2">Clankess</div>
+                    <div className="text-sm text-soft-gray">Meme Coin • Clanker + Plasma Merge</div>
                   </div>
                 </div>
                 
