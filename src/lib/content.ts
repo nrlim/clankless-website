@@ -11,17 +11,17 @@ export const siteContent = {
 
   // Contract Information
   contract: {
-    address: "0xeb1c0FeC0312FC1ef382D002dB2d2709141caff7", // UPDATE THIS
+    address: "0x7f0246D9a4d68854EA7C9c38B6b7C91b7040FEa1", // UPDATE THIS
     decimals: 18,
     chainSlug: "plasma", // UPDATE THIS for Dexscreener
-    pairAddress: "0xeb1c0FeC0312FC1ef382D002dB2d2709141caff7", // UPDATE THIS
+    pairAddress: "0x7f0246D9a4d68854EA7C9c38B6b7C91b7040FEa1", // UPDATE THIS
   },
 
   // Social Links
   social: {
     twitter: "https://x.com/", // UPDATE THIS
     telegram: "https://t.me/", // UPDATE THIS
-    dexLink: "https://dexscreener.com/plasma/0xeb1c0fec0312fc1ef382d002db2d2709141caff7", // UPDATE THIS
+    dexLink: "https://dexscreener.com/plasma/0x7f0246D9a4d68854EA7C9c38B6b7C91b7040FEa1", // UPDATE THIS
   },
 
   // Navigation
