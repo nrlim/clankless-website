@@ -38,9 +38,6 @@ export default function ContractInfo() {
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                       </svg>
-                      <span className="text-xs text-soft-gray group-hover:text-electric-cyan transition-colors duration-200">
-                        Copy
-                      </span>
                     </div>
                   </div>
                 </CopyToClipboard>
@@ -117,7 +114,7 @@ export default function ContractInfo() {
                   Copy Contract
                 </div>
               </CopyToClipboard>
-              
+
               <a
                 href={siteContent.social.dexLink}
                 target="_blank"
